@@ -86,9 +86,18 @@ class App:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    self.player.move(vec(-1, 0))
+                if event.key == pygame.K_RIGHT:
+                    self.player.move(vec(1, 0))
+                if event.key == pygame.K_UP:
+                    self.player.move(vec(0, -1))
+                if event.key == pygame.K_DOWN:
+                    self.player.move(vec(0, 1))
 
     def playing_update(self):
-        pass
+        self.player.update()
 
     def playing_draw(self):
         self.screen.fill(BLACK)
@@ -96,4 +105,5 @@ class App:
         self.draw_grid()
         self.draw_text(f"CURRENT SCORE: {0}", self.screen, [60, 5], 24, WHITE, START_FONT)
         self.draw_text(f"HIGH SCORE: {0}", self.screen, [WIDTH // 2 + 60, 5], 24, WHITE, START_FONT)
+        self.player.draw()
         pygame.display.update()

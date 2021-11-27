@@ -13,11 +13,12 @@ GREY = (107, 107, 107)
 WHITE = (255, 255, 255)
 ORANGE = (255, 142, 15)
 BLUE = (50, 201, 255)
+PLAYER_COLOR = (190, 194, 15)
 # font settings
 START_TEXT_SIZE = 26
 START_FONT = 'arial black'
 
 # player settings
-PLAYER_START_POS = vec(1, 1)
+PLAYER_START_POS = vec(1, 10)
 
 # bad guy settings
