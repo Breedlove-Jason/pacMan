@@ -18,7 +18,7 @@ An in-depth look at building the traditional arcade style PacMan game using pyth
 
 ***
 ## Bugs:
-
+    need to resolve the quit method. not working anymore
 
 
 
