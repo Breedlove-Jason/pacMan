@@ -1,6 +1,7 @@
 import pygame
 import sys
 from settings import *
+from player_class import *
 
 pygame.init()
 vec = pygame.math.Vector2
@@ -14,6 +15,7 @@ class App:
         self.state = 'start'
         self.cell_width = MAZE_WIDTH // 28
         self.cell_height = MAZE_HEIGHT // 30
+        self.player = Player(self, PLAYER_START_POS)
 
         self.load()
 
@@ -70,9 +72,9 @@ class App:
 
     def start_draw(self):
         self.screen.fill(BLACK)
-        self.draw_text('PUSH SPACE BAR', self.screen, [WIDTH // 2, HEIGHT // 2], START_TEXT_SIZE, (255, 142, 15),
+        self.draw_text('PUSH SPACE BAR', self.screen, [WIDTH // 2, HEIGHT // 2], START_TEXT_SIZE, ORANGE,
                        START_FONT, centered=True)
-        self.draw_text('1 PLAYER ONLY', self.screen, [WIDTH // 2, HEIGHT // 2 + 75], START_TEXT_SIZE, (50, 201, 255),
+        self.draw_text('1 PLAYER ONLY', self.screen, [WIDTH // 2, HEIGHT // 2 + 75], START_TEXT_SIZE, BLUE,
                        START_FONT, centered=True)
         self.draw_text('HIGH SCORE', self.screen, [5, 1], START_TEXT_SIZE, WHITE,
                        START_FONT)
@@ -90,8 +92,8 @@ class App:
 
     def playing_draw(self):
         self.screen.fill(BLACK)
-        self.screen.blit(self.background, (TOP_BOTTOM_BUFFER//2, TOP_BOTTOM_BUFFER//2))
+        self.screen.blit(self.background, (TOP_BOTTOM_BUFFER // 2, TOP_BOTTOM_BUFFER // 2))
         self.draw_grid()
         self.draw_text(f"CURRENT SCORE: {0}", self.screen, [60, 5], 24, WHITE, START_FONT)
-        self.draw_text(f"HIGH SCORE: {0}", self.screen, [WIDTH//2 + 60, 5], 24, WHITE, START_FONT)
+        self.draw_text(f"HIGH SCORE: {0}", self.screen, [WIDTH // 2 + 60, 5], 24, WHITE, START_FONT)
         pygame.display.update()
