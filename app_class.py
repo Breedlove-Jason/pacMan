@@ -17,6 +17,7 @@ class App:
         self.cell_height = MAZE_HEIGHT // 30
         self.player = Player(self, PLAYER_START_POS)
         self.walls = []
+        self.coins = []
 
         self.load()
 
@@ -58,6 +59,8 @@ class App:
                 for xidx, char in enumerate(line):
                     if char == "1":
                         self.walls.append(vec(xidx, yidx))
+                    elif char == "C":
+                        self.coins.append(vec(xidx, yidx))
 
     #  print(len(self.walls))
 
@@ -69,9 +72,9 @@ class App:
             pygame.draw.line(self.background, GREY, (0, x * self.cell_height), (WIDTH, x * self.cell_height))
 
         # check that walls are working
-        # for wall in self.walls:
-        #     pygame.draw.rect(self.background, (112, 55, 163),
-        #                      (wall.x * self.cell_width, wall.y * self.cell_height, self.cell_width, self.cell_height))
+        for coin in self.coins:
+            pygame.draw.rect(self.background, (167, 179, 34),
+                             (coin.x * self.cell_width, coin.y * self.cell_height, self.cell_width, self.cell_height))
 
     '''####################### INTRO FUNCTIONS ##########################'''
 

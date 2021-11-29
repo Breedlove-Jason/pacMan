@@ -29,10 +29,11 @@ class Player:
         pygame.draw.circle(self.app.screen, PLAYER_COLOR, (int(self.pix_pos.x), int(self.pix_pos.y)),
                            self.app.cell_width // 2 - 2)
         # draw rectangle to track grid position
-        pygame.draw.rect(self.app.screen, RED, (self.grid_pos[0] * self.app.cell_width + TOP_BOTTOM_BUFFER // 2,
-                                                self.grid_pos[1] * self.app.cell_height + TOP_BOTTOM_BUFFER // 2,
-                                                self.app.cell_width,
-                                                self.app.cell_height), 1)
+        # pygame.draw.rect(self.app.screen, RED, (self.grid_pos[0] * self.app.cell_width + TOP_BOTTOM_BUFFER // 2,
+        #                                         self.grid_pos[1] * self.app.cell_height + TOP_BOTTOM_BUFFER // 2,
+        #                                         self.app.cell_width,
+        #                                         self.app.cell_height), 1)
+        #
 
     def move(self, direction):
         self.stored_direction = direction
