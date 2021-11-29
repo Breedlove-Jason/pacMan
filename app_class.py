@@ -68,9 +68,10 @@ class App:
         for x in range(HEIGHT // self.cell_height):
             pygame.draw.line(self.background, GREY, (0, x * self.cell_height), (WIDTH, x * self.cell_height))
 
-        for wall in self.walls:
-            pygame.draw.rect(self.background, (112, 55, 163),
-                             (wall.x * self.cell_width, wall.y * self.cell_height, self.cell_width, self.cell_height))
+        # check that walls are working
+        # for wall in self.walls:
+        #     pygame.draw.rect(self.background, (112, 55, 163),
+        #                      (wall.x * self.cell_width, wall.y * self.cell_height, self.cell_width, self.cell_height))
 
     '''####################### INTRO FUNCTIONS ##########################'''
 
@@ -88,7 +89,7 @@ class App:
         self.screen.fill(BLACK)
         self.draw_text('PUSH SPACE BAR', self.screen, [WIDTH // 2, HEIGHT // 2], START_TEXT_SIZE, ORANGE,
                        START_FONT, centered=True)
-        self.draw_text('1 PLAYER ONLY', self.screen, [WIDTH // 2, HEIGHT // 2 + 75], START_TEXT_SIZE, BLUE,
+        self.draw_text('1 PLAYER ONLY', self.screen, [WIDTH // 2, HEIGHT // 2 + 75], PLAYER1_SIZE, BLUE,
                        START_FONT, centered=True)
         self.draw_text('HIGH SCORE', self.screen, [5, 1], START_TEXT_SIZE, WHITE,
                        START_FONT)

@@ -1,5 +1,4 @@
 from pygame.math import Vector2 as vec
-
 # screen settings
 WIDTH, HEIGHT = 610, 670
 TOP_BOTTOM_BUFFER = 50
@@ -15,10 +14,12 @@ ORANGE = (255, 142, 15)
 BLUE = (50, 201, 255)
 PLAYER_COLOR = (190, 194, 15)
 # font settings
-START_TEXT_SIZE = 26
-START_FONT = 'arial black'
+START_TEXT_SIZE = 30
+PLAYER1_SIZE = 26
+START_FONT = 'Arial Black'
+
 
 # player settings
-PLAYER_START_POS = vec(1, 10)
+PLAYER_START_POS = vec(1, 1)
 
 # bad guy settings
