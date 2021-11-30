@@ -20,6 +20,9 @@ An in-depth look at building the traditional arcade style PacMan game using pyth
 ## Bugs:
     need to resolve the quit method. not working anymore
     fixed bug in wall generation
+    when pacman starts the game on the top row he goes through the walls until user moves him then the walls function correctly returns
+    might adjust the background image to reflect the outer walls correctly
+    could try and center the first column on the left as it appears just slightly off but it may be more likely that the image is just not complete
 
 
 

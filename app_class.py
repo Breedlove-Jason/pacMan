@@ -54,7 +54,7 @@ class App:
         self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
 
         # opening file and creating walls list with coordinates of walls
-        with open("walls2.txt", 'r') as file:
+        with open("walls.txt", 'r') as file:
             for yidx, line in enumerate(file):
                 for xidx, char in enumerate(line):
                     if char == "1":
@@ -71,10 +71,10 @@ class App:
         for x in range(HEIGHT // self.cell_height):
             pygame.draw.line(self.background, GREY, (0, x * self.cell_height), (WIDTH, x * self.cell_height))
 
-        # check that walls are working
-        for coin in self.coins:
-            pygame.draw.rect(self.background, (167, 179, 34),
-                             (coin.x * self.cell_width, coin.y * self.cell_height, self.cell_width, self.cell_height))
+        # check that walls are working or check that the coins are working
+        # for coin in self.coins:
+        #     pygame.draw.rect(self.background, (167, 179, 34),
+        #                      (coin.x * self.cell_width, coin.y * self.cell_height, self.cell_width, self.cell_height))
 
     '''####################### INTRO FUNCTIONS ##########################'''
 
@@ -120,8 +120,16 @@ class App:
     def playing_draw(self):
         self.screen.fill(BLACK)
         self.screen.blit(self.background, (TOP_BOTTOM_BUFFER // 2, TOP_BOTTOM_BUFFER // 2))
+        self.draw_coins()
+
         self.draw_grid()
-        self.draw_text(f"CURRENT SCORE: {0}", self.screen, [60, 5], 24, WHITE, START_FONT)
+        self.draw_text(f"CURRENT SCORE: {self.player.current_score}", self.screen, [60, 5], 24, WHITE, START_FONT)
         self.draw_text(f"HIGH SCORE: {0}", self.screen, [WIDTH // 2 + 60, 5], 24, WHITE, START_FONT)
         self.player.draw()
         pygame.display.update()
+
+    def draw_coins(self):
+        for coin in self.coins:
+            pygame.draw.circle(self.screen, GOLD,
+                               (int(coin.x * self.cell_width) + self.cell_width // 2 + TOP_BOTTOM_BUFFER // 2,
+                                int(coin.y * self.cell_height) + self.cell_height // 2 + TOP_BOTTOM_BUFFER // 2), 5)
