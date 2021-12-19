@@ -1,2 +1,6 @@
 
-dpython:S2208"GImport only needed names or import the module and then use its members.(Øå®×ûÿÿÿÿ
+Npython:S1066-"/Merge this if statement with the enclosing one.(†¿ïÆ8¦¶¶›×/
+Npython:S10660"/Merge this if statement with the enclosing one.(“çúÐ8§¶¶›×/
+Npython:S1066L"/Merge this if statement with the enclosing one.(Öäì¹8¨¶¶›×/
+Npython:S1066P"/Merge this if statement with the enclosing one.(“çúÐ8¨¶¶›×/
+kpython:S2208"GImport only needed names or import the module and then use its members.(Øå®×ûÿÿÿÿ8©¶¶›×/

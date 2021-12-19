@@ -1,5 +1,5 @@
 
-dpython:S2208"GImport only needed names or import the module and then use its members.(Øå®×ûÿÿÿÿ
-dpython:S2208"GImport only needed names or import the module and then use its members.(†Œ²†ùÿÿÿÿ
-qpython:S1186F"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Ì ù¾
-qpython:S3776U"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß‡»Îûÿÿÿÿ
+kpython:S2208"GImport only needed names or import the module and then use its members.(Øå®×ûÿÿÿÿ8Î¹§öÖ/
+kpython:S2208"GImport only needed names or import the module and then use its members.(†Œ²†ùÿÿÿÿ8Î¹§öÖ/
+xpython:S1186]"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Ì ù¾8Î¹§öÖ/
+xpython:S3776l"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(ß‡»Îûÿÿÿÿ8Î¹§öÖ/
