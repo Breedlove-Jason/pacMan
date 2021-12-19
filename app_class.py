@@ -85,11 +85,6 @@ class App:
         for x in range(HEIGHT // self.cell_height):
             pygame.draw.line(self.background, GREY, (0, x * self.cell_height), (WIDTH, x * self.cell_height))
 
-        # check that walls are working or check that the coins are working
-        # for coin in self.coins:
-        #     pygame.draw.rect(self.background, (167, 179, 34),
-        #                      (coin.x * self.cell_width, coin.y * self.cell_height, self.cell_width, self.cell_height))
-
     '''####################### INTRO FUNCTIONS ##########################'''
 
     def start_events(self):
@@ -151,3 +146,4 @@ class App:
             pygame.draw.circle(self.screen, GOLD,
                                (int(coin.x * self.cell_width) + self.cell_width // 2 + TOP_BOTTOM_BUFFER // 2,
                                 int(coin.y * self.cell_height) + self.cell_height // 2 + TOP_BOTTOM_BUFFER // 2), 5)
+
