@@ -68,11 +68,12 @@ class App:
                     elif char == "P":
                         self.p_pos = vec(xidx, yidx)
                     elif char in ["2", "3", "4", "5"]:
-                        print(yidx, xidx)
+                        self.e_pos.append(vec(xidx, yidx))
 
     #  print(len(self.walls))
     def make_enemies(self):
-        self.enemies.append(Enemy(self))
+        for pos in self.e_pos:
+            self.enemies.append(Enemy(self, pos))
 
     def draw_grid(self):
         for x in range(WIDTH // self.cell_width):
@@ -126,6 +127,8 @@ class App:
 
     def playing_update(self):
         self.player.update()
+        for enemy in self.enemies:
+            enemy.update()
 
     def playing_draw(self):
         self.screen.fill(BLACK)
@@ -136,6 +139,8 @@ class App:
         self.draw_text(f"CURRENT SCORE: {self.player.current_score}", self.screen, [60, 5], 24, WHITE, START_FONT)
         self.draw_text(f"HIGH SCORE: {0}", self.screen, [WIDTH // 2 + 60, 5], 24, WHITE, START_FONT)
         self.player.draw()
+        for enemy in self.enemies:
+            enemy.draw()
         pygame.display.update()
 
     def draw_coins(self):
