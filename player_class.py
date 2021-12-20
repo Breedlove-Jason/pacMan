@@ -31,13 +31,10 @@ class Player:
             self.eat_coin()
 
     def draw(self):
-        pygame.draw.circle(self.app.screen, PLAYER_COLOR, (int(self.pix_pos.x), int(self.pix_pos.y)),
-                           self.app.cell_width // 2 - 2)
-        # draw rectangle to track grid position
-        # pygame.draw.rect(self.app.screen, RED, (self.grid_pos[0] * self.app.cell_width + TOP_BOTTOM_BUFFER // 2,
-        #                                         self.grid_pos[1] * self.app.cell_height + TOP_BOTTOM_BUFFER // 2,
-        #                                         self.app.cell_width,
-        #                                         self.app.cell_height), 1)
+        pac_man_icon = pygame.image.load('images/pac-man20.png')
+        self.app.screen.blit(pac_man_icon, (int(self.pix_pos.x) - 9, int(self.pix_pos.y) - 10))
+        # pygame.draw.circle(self.app.screen, PLAYER_COLOR, (int(self.pix_pos.x), int(self.pix_pos.y)),
+        #                    self.app.cell_width // 2 - 2)
         #
 
     def on_coin(self):
